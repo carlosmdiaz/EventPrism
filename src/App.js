@@ -29,25 +29,25 @@ function App() {
       <div className="App">
         {/* Only one route to show up at a time */}
         <Routes>
-          <Route path="https://eventprism.netlify.app/" element={<>
+          <Route path="/" element={<>
             {!isLogged && <Homepage />}
-            {isLogged && <Navigate to={'https://eventprism.netlify.app/dashboard' || 'https://eventprism.netlify.app/aboutpage'}/>}
+            {isLogged && <Navigate to={'/dashboard' || '/aboutpage'}/>}
             </>}/>
-          <Route path="https://eventprism.netlify.app/login" element={<>
-            {isLogged && <Navigate to='https://eventprism.netlify.app/dashboard'/>}
+          <Route path="/login" element={<>
+            {isLogged && <Navigate to='/dashboard'/>}
             {!isLogged && <Login />}
             </>} />
-          <Route path="https://eventprism.netlify.app/register" element={<>
+          <Route path="/register" element={<>
             {!isLogged && <Register />}
-            {isLogged && <Navigate to='https://eventprism.netlify.app/dashboard'/>}
+            {isLogged && <Navigate to='/dashboard'/>}
             </>} />
-          <Route path="https://eventprism.netlify.app/dashboard" element={<>
-            {isLogged && <Dashboard setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='https://eventprism.netlify.app/login'/>}
+          <Route path="/dashboard" element={<>
+            {isLogged && <Dashboard setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='/login'/>}
             </>} />
-          <Route path="https://eventprism.netlify.app/aboutpage" element={<>
-            {isLogged && <Aboutpage setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='https://eventprism.netlify.app/login'/>}
+          <Route path="/aboutpage" element={<>
+            {isLogged && <Aboutpage setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='/login'/>}
             </>} />
-          <Route path="https://eventprism.netlify.app/eventinfo/:id" element={<>
+          <Route path="/eventinfo/:id" element={<>
             {isLogged && <EventInfo/> || isLogged == false && <Navigate to='/login'/>}
             </>}/>
         </Routes>

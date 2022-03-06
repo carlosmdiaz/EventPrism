@@ -9,10 +9,10 @@ function HomeBar({setIsLogged}) {
         setIsLogged(null);
       }
     const redirectDashboard = () => {
-        window.location = 'https://eventprism.netlify.app/dashboard';  
+        window.location = '/dashboard';  
     }
     const redirectAbout = () => {
-        window.location = "https://eventprism.netlify.app/aboutpage";
+        window.location = "/aboutpage";
     }
 
 
