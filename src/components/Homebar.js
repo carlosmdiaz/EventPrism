@@ -5,14 +5,14 @@ import logo from'../images/image.png'
 function HomeBar({setIsLogged}) {
     const logout = async ()=>{
         await auth.signOut();
-        window.location = "/login";
+        window.location = "https://eventprism.netlify.app/login";
         setIsLogged(null);
       }
     const redirectDashboard = () => {
-        window.location = '/dashboard';  
+        window.location = 'https://eventprism.netlify.app/dashboard';  
     }
     const redirectAbout = () => {
-        window.location = "/aboutpage";
+        window.location = "https://eventprism.netlify.app/aboutpage";
     }
 
 

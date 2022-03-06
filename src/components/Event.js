@@ -3,7 +3,7 @@ import "../styles/Event.css";
 import star from "../images/star.png";
 function Event({ title, image, date, months, score, lowest_price, event_id }) {
   const redirectInfo = () => {
-    window.location = `/eventinfo/${event_id}`
+    window.location = `https://eventprism.netlify.app/eventinfo/${event_id}`
   }
 
   const checkPrice = (lowest_price) => {
