@@ -30,25 +30,25 @@ function App() {
         {/* Only one route to show up at a time */}
         <Routes>
           <Route path="/" element={<>
-            {!isLogged && <Homepage />}
-            {isLogged && <Navigate to={'/dashboard' || '/aboutpage'}/>}
+            {(!isLogged) && (<Homepage />)}
+            {(isLogged) && (<Navigate to={('/dashboard') || ('/aboutpage')}/>)}
             </>}/>
           <Route path="/login" element={<>
-            {isLogged && <Navigate to='/dashboard'/>}
-            {!isLogged && <Login />}
+            {(isLogged) && (<Navigate to='/dashboard'/>)}
+            {(!isLogged) && (<Login />)}
             </>} />
           <Route path="/register" element={<>
-            {!isLogged && <Register />}
-            {isLogged && <Navigate to='/dashboard'/>}
+            {(!isLogged) && (<Register />)}
+            {(isLogged) && (<Navigate to='/dashboard'/>)}
             </>} />
           <Route path="/dashboard" element={<>
-            {isLogged && <Dashboard setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='/login'/>}
+            {(isLogged) && ((<Dashboard setIsLogged={setIsLogged} isLogged={isLogged}/>) || ((isLogged == false) && (<Navigate to='/login'/>)))}
             </>} />
           <Route path="/aboutpage" element={<>
-            {isLogged && <Aboutpage setIsLogged={setIsLogged} isLogged={isLogged}/> || isLogged == false && <Navigate to='/login'/>}
+            {(isLogged) && ((<Aboutpage setIsLogged={setIsLogged} isLogged={isLogged}/> ) || ((isLogged == false) && (<Navigate to='/login'/>)))}
             </>} />
           <Route path="/eventinfo/:id" element={<>
-            {isLogged && <EventInfo/> || isLogged == false && <Navigate to='/login'/>}
+            {(isLogged) && ((<EventInfo/>) || ((isLogged == false) && (<Navigate to='/login'/>)))}
             </>}/>
         </Routes>
       </div>
